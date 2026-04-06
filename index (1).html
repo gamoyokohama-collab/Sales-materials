@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEAUTY COLLECTION 2026 | GAMO 神奈川支社</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:      #ff4d8d;
+      --pink-light:#ff8db8;
+      --pink-pale: #fff0f5;
+      --purple:    #8b5cf6;
+      --purple-light: #c4b5fd;
+      --gold:      #f5a623;
+      --gold-light:#ffd670;
+      --gold-dark: #d4840a;
+      --mint:      #00c9a7;
+      --mint-light:#a7f3e4;
+      --sky:       #38bdf8;
+      --coral:     #ff6b6b;
+      --white:     #ffffff;
+      --off-white: #fdf8ff;
+      --light:     #fce7f5;
+      --mid:       #f3e8ff;
+      --text:      #1e1b4b;
+      --text-mid:  #4b5563;
+      --gray:      #9ca3af;
+      --card-bg:   #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--pink), var(--purple), var(--mint)) 1;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(139,92,246,0.08);
+    }
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--text-mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fff0f7 0%, #f5f0ff 40%, #e8f8ff 100%);
+    }
+    .hero-blob { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(60px); }
+    .blob1 { width: 500px; height: 500px; background: rgba(255,77,141,0.2); top: -100px; right: -100px; }
+    .blob2 { width: 400px; height: 400px; background: rgba(139,92,246,0.2); bottom: -80px; left: -80px; }
+    .blob3 { width: 300px; height: 300px; background: rgba(0,201,167,0.15); top: 30%; left: 5%; }
+    .blob4 { width: 250px; height: 250px; background: rgba(245,166,35,0.18); bottom: 20%; right: 5%; }
+    .hero-inner { position: relative; z-index: 2; padding: 80px 20px 60px; }
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      color: var(--white);
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      padding: 7px 22px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      border-radius: 100px;
+      box-shadow: 0 4px 15px rgba(255,77,141,0.3);
+    }
+    .hero-title { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1; text-transform: uppercase; }
+    .hero-title .beauty {
+      display: block;
+      font-size: clamp(3.5rem, 12vw, 8rem);
+      background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 60%, var(--sky) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.05em;
+    }
+    .hero-title .collection {
+      display: block;
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      color: var(--text);
+      letter-spacing: 0.08em;
+    }
+    .hero-year {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.5em;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .hero-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 28px auto; }
+    .hero-divider::before, .hero-divider::after { content: ''; flex: 1; max-width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--pink)); }
+    .hero-divider::after { background: linear-gradient(90deg, var(--purple), transparent); }
+    .hero-divider-star { font-size: 1.2rem; color: var(--gold); }
+    .hero-date { font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 700; color: var(--text); margin-bottom: 4px; letter-spacing: 0.05em; }
+    .hero-time {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      background: linear-gradient(90deg, var(--purple), var(--sky));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.1em; font-weight: 700;
+    }
+    .hero-venue { font-size: 1rem; color: var(--text-mid); letter-spacing: 0.12em; margin-top: 8px; font-weight: 500; }
+    .hero-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--white); font-weight: 900; font-size: 0.9rem;
+      padding: 10px 28px; margin-top: 20px; border-radius: 100px;
+      box-shadow: 0 6px 20px rgba(245,166,35,0.35); letter-spacing: 0.04em;
+    }
+    .hero-sub {
+      font-size: 0.8rem; color: var(--text-mid); margin-top: 10px; letter-spacing: 0.04em;
+      padding: 6px 16px; background: rgba(139,92,246,0.07); border-radius: 100px;
+      display: inline-block; border: 1px solid rgba(139,92,246,0.15);
+    }
+    .scroll-indicator {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: var(--pink); font-size: 0.65rem; letter-spacing: 0.25em;
+      text-transform: uppercase; font-family: 'Oswald', sans-serif; font-weight: 600;
+      animation: bounce 2s infinite;
+    }
+    .scroll-indicator::after { content: ''; width: 2px; height: 36px; background: linear-gradient(to bottom, var(--pink), transparent); }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 80px 20px; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-label {
+      font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 0.4em;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase; margin-bottom: 10px; display: block; font-weight: 600;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700;
+      background: linear-gradient(135deg, var(--text) 30%, var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.05em;
+    }
+    .section-title-ja { font-size: clamp(0.82rem, 2vw, 0.95rem); color: var(--text-mid); margin-top: 8px; letter-spacing: 0.04em; }
+    .rainbow-line { width: 80px; height: 3px; background: linear-gradient(90deg, var(--pink), var(--purple), var(--mint)); margin: 18px auto 0; border-radius: 100px; }
+
+    /* ===== INFO SECTION ===== */
+    .info-section {
+      background: linear-gradient(135deg, #fff0f7 0%, #f5f0ff 100%);
+      border-top: 1px solid rgba(255,77,141,0.1);
+      border-bottom: 1px solid rgba(139,92,246,0.1);
+    }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto; }
+    .info-item {
+      text-align: center; background: var(--white); border-radius: 20px; padding: 28px 20px;
+      box-shadow: 0 4px 20px rgba(139,92,246,0.08); border: 1px solid rgba(255,77,141,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .info-item:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(139,92,246,0.14); }
+    .info-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .info-label {
+      font-family: 'Oswald', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase; margin-bottom: 8px; display: block; font-weight: 600;
+    }
+    .info-value { font-size: 0.98rem; font-weight: 700; color: var(--text); line-height: 1.5; }
+    .info-value small { display: block; font-size: 0.74rem; font-weight: 400; color: var(--text-mid); margin-top: 4px; }
+
+    /* ===== FLOOR MAP ===== */
+    .map-section {
+      background: linear-gradient(135deg, #f5f0ff 0%, #e8f8ff 50%, #fff0f7 100%);
+      border-top: 1px solid rgba(139,92,246,0.1);
+      border-bottom: 1px solid rgba(255,77,141,0.1);
+      padding: 80px 20px;
+    }
+    .map-container { max-width: 1200px; margin: 0 auto; }
+    .map-bg {
+      background: var(--white); border-radius: 24px; padding: 24px;
+      box-shadow: 0 8px 40px rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.12);
+    }
+    .venue-svg { width: 100%; height: auto; display: block; }
+    .map-text-style { font-weight: 700; paint-order: stroke; stroke: #ffffff; stroke-width: 0.4px; }
+    .map-area-group { cursor: pointer; }
+    .map-area-group .area-bg { transition: fill 0.25s, stroke-width 0.25s; }
+    .map-area-group:hover .area-bg { stroke-width: 2.5px; }
+    .map-area-group.map-selected .area-bg { stroke-width: 3px; }
+    .map-hint { text-align: center; font-size: 0.78rem; color: var(--text-mid); margin-top: 16px; letter-spacing: 0.06em; }
+    .map-hint span { color: var(--pink); }
+    .map-reset-btn {
+      display: block; margin: 14px auto 0;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      border: none; color: var(--white); font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.2em; padding: 8px 24px; cursor: pointer;
+      text-transform: uppercase; border-radius: 100px; font-weight: 600;
+      transition: all 0.3s; box-shadow: 0 4px 14px rgba(255,77,141,0.3);
+    }
+    .map-reset-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,77,141,0.4); }
+
+    /* ===== EXHIBITORS ===== */
+    .exhibitors { background: var(--off-white); }
+    .area-count { text-align: center; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-mid); }
+    .area-count strong {
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      font-family: 'Oswald', sans-serif; font-size: 1.4rem;
+    }
+    .filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
+    .filter-btn {
+      font-family: 'Noto Sans JP', sans-serif; font-size: 0.8rem; padding: 8px 22px;
+      border: 2px solid rgba(139,92,246,0.2); background: var(--white); color: var(--text-mid);
+      cursor: pointer; letter-spacing: 0.05em; border-radius: 100px; transition: all 0.3s;
+      font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .filter-btn:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(255,77,141,0.15); }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white); border-color: transparent; font-weight: 700;
+      box-shadow: 0 4px 16px rgba(255,77,141,0.35);
+    }
+    .search-box { display: flex; justify-content: center; margin-bottom: 30px; }
+    .search-box input {
+      width: 100%; max-width: 420px; padding: 14px 22px; background: var(--white);
+      border: 2px solid rgba(139,92,246,0.2); color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif; font-size: 0.88rem; outline: none;
+      border-radius: 100px; transition: border-color 0.3s, box-shadow 0.3s;
+      letter-spacing: 0.04em; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .search-box input::placeholder { color: var(--gray); }
+    .search-box input:focus { border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255,77,141,0.1); }
+
+    /* ===== CARDS ===== */
+    .card-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px; max-width: 1300px; margin: 0 auto;
+    }
+    .maker-card {
+      background: var(--white); border: 1.5px solid rgba(139,92,246,0.1); border-radius: 20px;
+      overflow: hidden; cursor: pointer; display: flex; flex-direction: column;
+      transition: all 0.4s ease; position: relative;
+      opacity: 0; transform: translateY(30px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .maker-card.visible { opacity: 1; transform: translateY(0); }
+    .maker-card:hover { transform: translateY(-8px) !important; border-color: rgba(255,77,141,0.35); box-shadow: 0 20px 48px rgba(139,92,246,0.14), 0 4px 16px rgba(255,77,141,0.1); }
+    .card-logo-area {
+      height: 110px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .maker-card[data-area="A"] .card-logo-area { background: linear-gradient(135deg, #fff7e6, #ffecd0); }
+    .maker-card[data-area="B"] .card-logo-area { background: linear-gradient(135deg, #fff0f5, #ffd6e7); }
+    .maker-card[data-area="C"] .card-logo-area { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+    .maker-card[data-area="D"] .card-logo-area { background: linear-gradient(135deg, #f5f0ff, #ede9fe); }
+    .maker-card[data-area="E"] .card-logo-area { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+    .maker-card[data-area="F"] .card-logo-area { background: linear-gradient(135deg, #ecfffe, #ccfbf1); }
+    .maker-card[data-area="G"] .card-logo-area { background: linear-gradient(135deg, #f0fff4, #dcfce7); }
+    .maker-card[data-area="H"] .card-logo-area { background: linear-gradient(135deg, #fdf4ff, #fae8ff); }
+    .maker-card[data-area="I"] .card-logo-area { background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+    .card-logo-placeholder {
+      font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text);
+      letter-spacing: 0.06em; text-align: center; padding: 0 16px; position: relative; z-index: 1; line-height: 1.3;
+    }
+    .maker-card[data-area="A"] .card-logo-placeholder { color: var(--gold-dark); }
+    .maker-card[data-area="B"] .card-logo-placeholder { color: #e85588; }
+    .maker-card[data-area="C"] .card-logo-placeholder { color: #2563eb; }
+    .maker-card[data-area="D"] .card-logo-placeholder { color: var(--purple); }
+    .maker-card[data-area="E"] .card-logo-placeholder { color: #059669; }
+    .maker-card[data-area="F"] .card-logo-placeholder { color: #0d9488; }
+    .maker-card[data-area="G"] .card-logo-placeholder { color: #16a34a; }
+    .maker-card[data-area="H"] .card-logo-placeholder { color: #9333ea; }
+    .maker-card[data-area="I"] .card-logo-placeholder { color: #b45309; }
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+    .card-area-badge {
+      display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.62rem;
+      letter-spacing: 0.18em; color: var(--white); padding: 3px 12px; margin-bottom: 10px;
+      width: fit-content; border-radius: 100px; font-weight: 600;
+    }
+    .maker-card[data-area="A"] .card-area-badge { background: linear-gradient(90deg, #f5a623, #d4840a); }
+    .maker-card[data-area="B"] .card-area-badge { background: linear-gradient(90deg, #ff4d8d, #e8339a); }
+    .maker-card[data-area="C"] .card-area-badge { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+    .maker-card[data-area="D"] .card-area-badge { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+    .maker-card[data-area="E"] .card-area-badge { background: linear-gradient(90deg, #10b981, #059669); }
+    .maker-card[data-area="F"] .card-area-badge { background: linear-gradient(90deg, #14b8a6, #0d9488); }
+    .maker-card[data-area="G"] .card-area-badge { background: linear-gradient(90deg, #22c55e, #16a34a); }
+    .maker-card[data-area="H"] .card-area-badge { background: linear-gradient(90deg, #a855f7, #9333ea); }
+    .maker-card[data-area="I"] .card-area-badge { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .card-name { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: 0.02em; line-height: 1.4; }
+    .card-copy {
+      font-size: 0.78rem; color: var(--text-mid); line-height: 1.75; letter-spacing: 0.02em;
+      border-left: 3px solid; border-image: linear-gradient(to bottom, var(--pink), var(--purple)) 1;
+      padding-left: 10px; flex: 1;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-campaign-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 14px; font-size: 0.72rem;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.06em; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-weight: 600;
+    }
+    .no-campaign { margin-top: 14px; font-size: 0.7rem; color: var(--gray); letter-spacing: 0.04em; }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(15, 10, 40, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-box {
+      background: var(--white); border-radius: 28px; max-width: 560px; width: 100%;
+      padding: 0; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(139,92,246,0.25), 0 8px 24px rgba(255,77,141,0.15);
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      max-height: 90vh; overflow-y: auto;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+    .modal-header {
+      padding: 28px 28px 20px;
+      background: linear-gradient(135deg, #fff0f7, #f5f0ff);
+      border-bottom: 1px solid rgba(139,92,246,0.1);
+      position: relative;
+    }
+    .modal-area-badge {
+      display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.62rem;
+      letter-spacing: 0.18em; color: var(--white); padding: 3px 14px;
+      border-radius: 100px; font-weight: 600; margin-bottom: 10px;
+    }
+    .modal-maker-name {
+      font-size: 1.3rem; font-weight: 900; color: var(--text); line-height: 1.3; letter-spacing: 0.02em;
+    }
+    .modal-close {
+      position: absolute; top: 20px; right: 20px;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: none; background: rgba(139,92,246,0.1);
+      color: var(--text-mid); font-size: 1.2rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .modal-close:hover { background: var(--pink); color: var(--white); transform: rotate(90deg); }
+    .modal-body { padding: 24px 28px 32px; }
+    .modal-section-title {
+      font-family: 'Oswald', sans-serif; font-size: 0.65rem; letter-spacing: 0.35em;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase; font-weight: 600; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .modal-section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(139,92,246,0.3), transparent); }
+    .modal-campaign-text {
+      font-size: 0.95rem; color: var(--text); line-height: 1.85; letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #fff0f7, #f5f0ff);
+      border-radius: 16px; padding: 18px 20px;
+      border-left: 4px solid;
+      border-image: linear-gradient(to bottom, var(--pink), var(--purple)) 1;
+    }
+    .modal-no-campaign {
+      font-size: 0.88rem; color: var(--gray); text-align: center; padding: 24px;
+      background: #f9fafb; border-radius: 12px;
+    }
+    .modal-copy-section { margin-top: 20px; }
+    .modal-copy-text { font-size: 0.82rem; color: var(--text-mid); line-height: 1.8; }
+
+    /* ===== FOOTER ===== */
+    footer { background: linear-gradient(135deg, #1e1b4b, #2d1b69); padding: 48px 20px; text-align: center; }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 0.3em;
+      background: linear-gradient(90deg, var(--pink-light), var(--purple-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 16px; font-weight: 700;
+    }
+    .footer-divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--pink), var(--purple)); margin: 0 auto 16px; border-radius: 100px; }
+    .footer-text { font-size: 0.74rem; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; line-height: 2.2; }
+    .no-results { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--gray); font-size: 0.9rem; display: none; }
+
+    @media (max-width: 768px) {
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+      .nav-links { display: none; }
+      .filter-btn { font-size: 0.72rem; padding: 6px 14px; }
+      .modal-box { border-radius: 20px; }
+      .modal-header, .modal-body { padding: 20px; }
+    }
+    @media (max-width: 480px) { .card-grid { grid-template-columns: 1fr; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">Beauty Collection 2026</div>
+    <ul class="nav-links">
+      <li><a href="#floormap">会場案内図</a></li>
+      <li><a href="#exhibitors">出展メーカー</a></li>
+      <li><a href="#info">開催情報</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-blob blob1"></div>
+    <div class="hero-blob blob2"></div>
+    <div class="hero-blob blob3"></div>
+    <div class="hero-blob blob4"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">✦ GAMO Kanagawa Branch ✦</div>
+      <h1 class="hero-title">
+        <span class="beauty">BEAUTY</span>
+        <span class="collection">COLLECTION</span>
+      </h1>
+      <div class="hero-year">2 0 2 6</div>
+      <div class="hero-divider"><span class="hero-divider-star">✦</span></div>
+      <div class="hero-info">
+        <div class="hero-date">2026年5月12日（火）</div>
+        <div class="hero-time">10:00 〜 16:00</div>
+        <div class="hero-venue">📍 パシフィコ横浜 ノース</div>
+      </div>
+      <div><div class="hero-tag">🌟 約70メーカーが一堂に集う 県内最大級の展示会</div></div>
+      <div style="margin-top:14px;"><div class="hero-sub">✧ 同時開催：B.DOORS kanagawa（美容学生向け就職活動フェア）</div></div>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <section class="info-section" id="info">
+    <div class="section-header">
+      <span class="section-label">✦ Event Info</span>
+      <h2 class="section-title">開催情報</h2>
+      <div class="rainbow-line"></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-icon">📅</div>
+        <span class="info-label">Date</span>
+        <div class="info-value">2026年5月12日（火）<small>10:00 〜 16:00</small></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <span class="info-label">Venue</span>
+        <div class="info-value">パシフィコ横浜 ノース<small>〒220-0012 横浜市西区みなとみらい1丁目1-2</small></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🏢</div>
+        <span class="info-label">Exhibitors</span>
+        <div class="info-value">約70メーカー<small>美容業界をリードするブランドが集結</small></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">✨</div>
+        <span class="info-label">Co-Event</span>
+        <div class="info-value">B.DOORS kanagawa<small>美容学生向け就職活動フェア</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLOOR MAP ===== -->
+  <section class="map-section" id="floormap">
+    <div class="section-header">
+      <span class="section-label">✦ Floor Map</span>
+      <h2 class="section-title">会場案内図</h2>
+      <p class="section-title-ja">エリアをクリックすると出展メーカーを絞り込めます</p>
+      <div class="rainbow-line"></div>
+    </div>
+    <div class="map-container">
+      <div class="map-bg">
+        <svg viewBox="0 0 1000 510" xmlns="http://www.w3.org/2000/svg" class="venue-svg">
+
+          <!-- ===== AREA A (top row) ===== -->
+          <g class="map-area-group" data-area="A" onclick="selectMapArea('A')">
+            <rect class="area-bg" x="10" y="15" width="980" height="68" rx="8" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.5"/>
+            <text x="18" y="40" fill="#d4840a" font-family="Oswald,sans-serif" font-size="22" font-weight="700">A</text>
+            <!-- dividers -->
+            <line x1="130" y1="22" x2="130" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="215" y1="22" x2="215" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="300" y1="22" x2="300" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="385" y1="22" x2="385" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="468" y1="22" x2="468" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="551" y1="22" x2="551" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="634" y1="22" x2="634" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="717" y1="22" x2="717" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="800" y1="22" x2="800" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <line x1="883" y1="22" x2="883" y2="76" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <!-- labels: タカラ エステシモ マイクロバブル ビューティメリット So easy 滝川 菊星 ダイソン AVEDA モロッカンオイル 販促企画 -->
+            <text x="72"  y="55" text-anchor="middle" font-size="11" class="map-text-style">タカラ</text>
+            <text x="172" y="55" text-anchor="middle" font-size="11" class="map-text-style">エステシモ</text>
+            <text x="257" y="55" text-anchor="middle" font-size="11" class="map-text-style">マイクロバブル</text>
+            <text x="342" y="55" text-anchor="middle" font-size="11" class="map-text-style">ビューティメリット</text>
+            <text x="426" y="55" text-anchor="middle" font-size="11" class="map-text-style">So easy</text>
+            <text x="509" y="55" text-anchor="middle" font-size="11" class="map-text-style">滝川</text>
+            <text x="592" y="55" text-anchor="middle" font-size="11" class="map-text-style">菊星</text>
+            <text x="675" y="55" text-anchor="middle" font-size="11" class="map-text-style">ダイソン</text>
+            <text x="758" y="55" text-anchor="middle" font-size="11" class="map-text-style">AVEDA</text>
+            <text x="841" y="55" text-anchor="middle" font-size="11" class="map-text-style">モロッカンオイル</text>
+            <text x="940" y="55" text-anchor="middle" font-size="11" class="map-text-style">販促企画</text>
+          </g>
+
+          <!-- ===== AREA B (top-left block) ===== -->
+          <g class="map-area-group" data-area="B" onclick="selectMapArea('B')">
+            <rect class="area-bg" x="10" y="100" width="255" height="130" rx="8" fill="rgba(255,77,141,0.10)" stroke="#ff4d8d" stroke-width="1.5"/>
+            <text x="18" y="122" fill="#e8339a" font-family="Oswald,sans-serif" font-size="20" font-weight="700">B</text>
+            <line x1="15" y1="148" x2="260" y2="148" stroke="rgba(255,77,141,0.2)" stroke-width="1"/>
+            <line x1="74"  y1="105" x2="74"  y2="225" stroke="rgba(255,77,141,0.15)" stroke-width="1"/>
+            <line x1="137" y1="105" x2="137" y2="225" stroke="rgba(255,77,141,0.15)" stroke-width="1"/>
+            <line x1="200" y1="105" x2="200" y2="225" stroke="rgba(255,77,141,0.15)" stroke-width="1"/>
+            <!-- row1: ロレアル アマトラ セフティ リアル化学 -->
+            <text x="44"  y="132" text-anchor="middle" font-size="11" class="map-text-style">ロレアル</text>
+            <text x="106" y="132" text-anchor="middle" font-size="11" class="map-text-style">アマトラ</text>
+            <text x="169" y="132" text-anchor="middle" font-size="11" class="map-text-style">セフティ</text>
+            <text x="230" y="132" text-anchor="middle" font-size="11" class="map-text-style">リアル化学</text>
+            <!-- row2: ミルボン ヘンケル ニューウェイ アリミノ -->
+            <text x="44"  y="195" text-anchor="middle" font-size="11" class="map-text-style">ミルボン</text>
+            <text x="106" y="195" text-anchor="middle" font-size="11" class="map-text-style">ヘンケル</text>
+            <text x="169" y="195" text-anchor="middle" font-size="11" class="map-text-style">ニューウェイ</text>
+            <text x="230" y="195" text-anchor="middle" font-size="11" class="map-text-style">アリミノ</text>
+          </g>
+
+          <!-- ===== AREA C (top-center block) ===== -->
+          <g class="map-area-group" data-area="C" onclick="selectMapArea('C')">
+            <rect class="area-bg" x="271" y="100" width="255" height="130" rx="8" fill="rgba(59,130,246,0.10)" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="279" y="122" fill="#2563eb" font-family="Oswald,sans-serif" font-size="20" font-weight="700">C</text>
+            <line x1="276" y1="148" x2="521" y2="148" stroke="rgba(59,130,246,0.2)" stroke-width="1"/>
+            <line x1="335" y1="105" x2="335" y2="225" stroke="rgba(59,130,246,0.15)" stroke-width="1"/>
+            <line x1="399" y1="105" x2="399" y2="225" stroke="rgba(59,130,246,0.15)" stroke-width="1"/>
+            <line x1="463" y1="105" x2="463" y2="225" stroke="rgba(59,130,246,0.15)" stroke-width="1"/>
+            <!-- row1: ホーユー 武田 千代田化学 (3 cells in top) -->
+            <text x="306" y="132" text-anchor="middle" font-size="11" class="map-text-style">ホーユー</text>
+            <text x="367" y="132" text-anchor="middle" font-size="11" class="map-text-style">武田</text>
+            <text x="431" y="132" text-anchor="middle" font-size="11" class="map-text-style">千代田化学</text>
+            <!-- row2: ウェラ UnG GOALD ルベル -->
+            <text x="306" y="195" text-anchor="middle" font-size="11" class="map-text-style">ウェラ</text>
+            <text x="367" y="195" text-anchor="middle" font-size="11" class="map-text-style">UnG</text>
+            <text x="431" y="195" text-anchor="middle" font-size="11" class="map-text-style">GOALD</text>
+            <text x="493" y="195" text-anchor="middle" font-size="11" class="map-text-style">ルベル</text>
+          </g>
+
+          <!-- ===== AREA D (top-right block) ===== -->
+          <g class="map-area-group" data-area="D" onclick="selectMapArea('D')">
+            <rect class="area-bg" x="532" y="100" width="458" height="130" rx="8" fill="rgba(139,92,246,0.10)" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="540" y="122" fill="#7c3aed" font-family="Oswald,sans-serif" font-size="20" font-weight="700">D</text>
+            <line x1="537" y1="148" x2="985" y2="148" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+            <line x1="600" y1="105" x2="600" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <line x1="660" y1="105" x2="660" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <line x1="720" y1="105" x2="720" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <line x1="780" y1="105" x2="780" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <line x1="840" y1="105" x2="840" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <line x1="900" y1="105" x2="900" y2="225" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+            <!-- row1: ユーグレナ セフィーヌ TooB SHIGETA マイハニー (販促企画エリア含む) -->
+            <text x="566" y="132" text-anchor="middle" font-size="10.5" class="map-text-style">ユーグレナ</text>
+            <text x="630" y="132" text-anchor="middle" font-size="10.5" class="map-text-style">セフィーヌ</text>
+            <text x="690" y="132" text-anchor="middle" font-size="10.5" class="map-text-style">TooB</text>
+            <text x="750" y="132" text-anchor="middle" font-size="10.5" class="map-text-style">SHIGETA</text>
+            <text x="810" y="132" text-anchor="middle" font-size="10.5" class="map-text-style">マイハニー</text>
+            <!-- row2: コーセー プロラッシュ BJC イムダイン -->
+            <text x="566" y="195" text-anchor="middle" font-size="10.5" class="map-text-style">コーセー</text>
+            <text x="630" y="195" text-anchor="middle" font-size="10.5" class="map-text-style">プロラッシュ</text>
+            <text x="690" y="195" text-anchor="middle" font-size="10.5" class="map-text-style">BJC</text>
+            <text x="750" y="195" text-anchor="middle" font-size="10.5" class="map-text-style">イムダイン</text>
+          </g>
+
+          <!-- 入口矢印 -->
+          <g>
+            <line x1="145" y1="252" x2="22" y2="252" stroke="#ff4d8d" stroke-width="2"/>
+            <text x="154" y="257" fill="#e8339a" font-size="13" font-weight="700">入口</text>
+          </g>
+
+          <!-- ===== AREA E (mid-left) ===== -->
+          <g class="map-area-group" data-area="E" onclick="selectMapArea('E')">
+            <rect class="area-bg" x="10" y="275" width="140" height="118" rx="8" fill="rgba(16,185,129,0.10)" stroke="#10b981" stroke-width="1.5"/>
+            <text x="18" y="295" fill="#059669" font-family="Oswald,sans-serif" font-size="19" font-weight="700">E</text>
+            <line x1="15" y1="315" x2="145" y2="315" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+            <line x1="80" y1="280" x2="80" y2="388" stroke="rgba(16,185,129,0.15)" stroke-width="1"/>
+            <!-- row1: Be-x サンコール -->
+            <text x="45"  y="302" text-anchor="middle" font-size="11" class="map-text-style">Be-x</text>
+            <text x="113" y="302" text-anchor="middle" font-size="11" class="map-text-style">サンコール</text>
+            <!-- row2: 中野製薬 テクノエイト -->
+            <text x="45"  y="365" text-anchor="middle" font-size="11" class="map-text-style">中野製薬</text>
+            <text x="113" y="365" text-anchor="middle" font-size="11" class="map-text-style">テクノエイト</text>
+          </g>
+
+          <!-- ===== AREA F (mid-center-left) ===== -->
+          <g class="map-area-group" data-area="F" onclick="selectMapArea('F')">
+            <rect class="area-bg" x="156" y="275" width="278" height="118" rx="8" fill="rgba(20,184,166,0.10)" stroke="#14b8a6" stroke-width="1.5"/>
+            <text x="164" y="295" fill="#0d9488" font-family="Oswald,sans-serif" font-size="19" font-weight="700">F</text>
+            <line x1="161" y1="315" x2="429" y2="315" stroke="rgba(20,184,166,0.2)" stroke-width="1"/>
+            <line x1="225" y1="280" x2="225" y2="388" stroke="rgba(20,184,166,0.15)" stroke-width="1"/>
+            <line x1="294" y1="280" x2="294" y2="388" stroke="rgba(20,184,166,0.15)" stroke-width="1"/>
+            <line x1="362" y1="280" x2="362" y2="388" stroke="rgba(20,184,166,0.15)" stroke-width="1"/>
+            <!-- row1: グランクラージュ デミ イーラル ナプラ -->
+            <text x="191" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">グランクラージュ</text>
+            <text x="259" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">デミ</text>
+            <text x="328" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">イーラル</text>
+            <text x="396" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">ナプラ</text>
+            <!-- row2: ビーファースト マデナ Sins ハホニコ -->
+            <text x="191" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">ビーファースト</text>
+            <text x="259" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">マデナ</text>
+            <text x="328" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">Sins</text>
+            <text x="396" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">ハホニコ</text>
+          </g>
+
+          <!-- ===== AREA G (mid-center-right) ===== -->
+          <g class="map-area-group" data-area="G" onclick="selectMapArea('G')">
+            <rect class="area-bg" x="440" y="275" width="278" height="118" rx="8" fill="rgba(34,197,94,0.10)" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="448" y="295" fill="#16a34a" font-family="Oswald,sans-serif" font-size="19" font-weight="700">G</text>
+            <line x1="445" y1="315" x2="713" y2="315" stroke="rgba(34,197,94,0.2)" stroke-width="1"/>
+            <line x1="509" y1="280" x2="509" y2="388" stroke="rgba(34,197,94,0.15)" stroke-width="1"/>
+            <line x1="578" y1="280" x2="578" y2="388" stroke="rgba(34,197,94,0.15)" stroke-width="1"/>
+            <line x1="646" y1="280" x2="646" y2="388" stroke="rgba(34,197,94,0.15)" stroke-width="1"/>
+            <!-- row1: 香栄化学 ワイマック 自由が丘C F'sビューティ -->
+            <text x="475" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">香栄化学</text>
+            <text x="544" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">ワイマック</text>
+            <text x="612" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">自由が丘C</text>
+            <text x="680" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">F'sビューティ</text>
+            <!-- row2: 野口総研 グランデックス パシフィック カエタス -->
+            <text x="475" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">野口総研</text>
+            <text x="544" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">グランデックス</text>
+            <text x="612" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">パシフィック</text>
+            <text x="680" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">カエタス</text>
+          </g>
+
+          <!-- ===== AREA H (mid-right) ===== -->
+          <g class="map-area-group" data-area="H" onclick="selectMapArea('H')">
+            <rect class="area-bg" x="724" y="275" width="266" height="118" rx="8" fill="rgba(168,85,247,0.10)" stroke="#a855f7" stroke-width="1.5"/>
+            <text x="732" y="295" fill="#9333ea" font-family="Oswald,sans-serif" font-size="19" font-weight="700">H</text>
+            <line x1="729" y1="315" x2="985" y2="315" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+            <line x1="790" y1="280" x2="790" y2="388" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+            <line x1="856" y1="280" x2="856" y2="388" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+            <line x1="922" y1="280" x2="922" y2="388" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+            <!-- row1: バルクオム アデランス ニチリ サクシード -->
+            <text x="757" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">バルクオム</text>
+            <text x="823" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">アデランス</text>
+            <text x="889" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">ニチリ</text>
+            <text x="955" y="302" text-anchor="middle" font-size="10.5" class="map-text-style">サクシード</text>
+            <!-- row2: ヤマノ フェザー 内海 水谷シザー -->
+            <text x="757" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">ヤマノ</text>
+            <text x="823" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">フェザー</text>
+            <text x="889" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">内海</text>
+            <text x="955" y="365" text-anchor="middle" font-size="10.5" class="map-text-style">水谷シザー</text>
+          </g>
+
+          <!-- ===== AREA I (bottom row) ===== -->
+          <g class="map-area-group" data-area="I" onclick="selectMapArea('I')">
+            <rect class="area-bg" x="120" y="420" width="868" height="72" rx="8" fill="rgba(245,158,11,0.10)" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="130" y="445" fill="#b45309" font-family="Oswald,sans-serif" font-size="19" font-weight="700">I</text>
+            <line x1="201" y1="425" x2="201" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="280" y1="425" x2="280" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="358" y1="425" x2="358" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="437" y1="425" x2="437" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="516" y1="425" x2="516" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="594" y1="425" x2="594" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="673" y1="425" x2="673" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="752" y1="425" x2="752" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="830" y1="425" x2="830" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <line x1="909" y1="425" x2="909" y2="485" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+            <!-- KINUJO Kirala YA-MAN MUK ツインバード アンドナイン LOA 1DK awaas LOBAL 大西 -->
+            <text x="161" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">KINUJO</text>
+            <text x="240" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">Kirala</text>
+            <text x="318" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">YA-MAN</text>
+            <text x="397" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">MUK</text>
+            <text x="476" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">ツインバード</text>
+            <text x="554" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">アンドナイン</text>
+            <text x="633" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">LOA</text>
+            <text x="712" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">1DK</text>
+            <text x="791" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">awaas</text>
+            <text x="870" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">LOBAL</text>
+            <text x="948" y="463" text-anchor="middle" font-size="10.5" class="map-text-style">大西</text>
+          </g>
+        </svg>
+      </div>
+      <p class="map-hint"><span>▲</span> エリアをタップ／クリックして出展メーカーを絞り込み表示</p>
+      <button class="map-reset-btn" onclick="resetMapFilter()">✦ すべて表示に戻す</button>
+    </div>
+  </section>
+
+  <!-- ===== EXHIBITORS ===== -->
+  <section class="exhibitors" id="exhibitors">
+    <div class="section-header">
+      <span class="section-label">✦ Exhibitors</span>
+      <h2 class="section-title">出展メーカー</h2>
+      <p class="section-title-ja">カードをタップして特別企画内容を確認できます</p>
+      <div class="rainbow-line"></div>
+    </div>
+    <div class="area-count"><strong id="visibleCount">70</strong> 社 表示中</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 メーカー名で検索..." oninput="applyFilters()" />
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="setArea('all', this)">すべて</button>
+      <button class="filter-btn" onclick="setArea('A', this)">Area A</button>
+      <button class="filter-btn" onclick="setArea('B', this)">Area B</button>
+      <button class="filter-btn" onclick="setArea('C', this)">Area C</button>
+      <button class="filter-btn" onclick="setArea('D', this)">Area D</button>
+      <button class="filter-btn" onclick="setArea('E', this)">Area E</button>
+      <button class="filter-btn" onclick="setArea('F', this)">Area F</button>
+      <button class="filter-btn" onclick="setArea('G', this)">Area G</button>
+      <button class="filter-btn" onclick="setArea('H', this)">Area H</button>
+      <button class="filter-btn" onclick="setArea('I', this)">Area I</button>
+    </div>
+    <div class="card-grid" id="cardGrid">
+      <div class="no-results" id="noResults">該当するメーカーが見つかりません</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">GAMO KANAGAWA BRANCH</div>
+    <div class="footer-divider"></div>
+    <div class="footer-text">
+      〒220-8124 神奈川県横浜市西区みなとみらい2-2-1 横浜ランドマークタワー24F 2403区｜TEL: 045-640-5206<br/>
+      神奈川中央支店｜藤沢支店<br/><br/>
+      &copy; 2026 GAMO Kanagawa Branch. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box" id="modalBox">
+      <div class="modal-header">
+        <div class="modal-area-badge" id="modalBadge"></div>
+        <div class="modal-maker-name" id="modalName"></div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section-title">✦ 特別企画内容</div>
+        <div id="modalCampaign"></div>
+        <div class="modal-copy-section" id="modalCopySection" style="display:none;">
+          <div class="modal-section-title" style="margin-top:18px;">✦ 出展コメント</div>
+          <div class="modal-copy-text" id="modalCopy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================================
+    // MAKERS DATA
+    // ============================================================
+    const makers = [
+      // ===== AREA A =====
+      { name: "タカラベルモント(株)", area: "A", copy: "サロンでも自宅でも。ECILAで繋がるsalon体験 ／ ONE CHAIR, for ALL この１台は、全てを叶える。", logoText: "TAKARA\nBELMONT", campaign: "" },
+      { name: "エステシモ", area: "A", copy: "違いは、一度でわかる。『ESTESSiMO』が導く、リピートされ続ける最上級ヘッドスパ提案。", logoText: "ESTESSiMO", campaign: "" },
+      { name: "株式会社マイクロバブル・ジャパン", area: "A", copy: "魔法のバブルでの極上体験", logoText: "marbb", campaign: "取付工事費の無償" },
+      { name: "株式会社サインド（ビューティメリット）", area: "A", copy: "業界シェアNo.1の予約システム「Beauty Merit」／ 美容室の未来を映すミラー「BM Smart Mirror」", logoText: "CYND", campaign: "" },
+      { name: "株式会社soeasy", area: "A", copy: "育成スピードの倍速化、技術の向上を実現。新人育成、組織づくりの課題をスマホで解決", logoText: "soeasy", campaign: "ルシケアスタイリングシリーズ、ルシケアアクアシリーズ、メイリークロスシリーズ" },
+      { name: "滝川株式会社", area: "A", copy: "体験型", logoText: "TAKIGAWA", campaign: "当日価格10%OFF" },
+      { name: "（株）菊星", area: "A", copy: "業務用品をはじめ、ドリンクの試飲もやっております！", logoText: "KIKUBOSHI", campaign: "" },
+      { name: "ダイソン", area: "A", copy: "4月発売の新製品スーパーソニック トラベルをご紹介します！", logoText: "dyson", campaign: "" },
+      { name: "AVEDA", area: "A", copy: "自然界由来96%のアヴェダカラー", logoText: "AVEDA", campaign: "ヘアケアサンプル配布" },
+      { name: "モロッカンオイルジャパン株式会社", area: "A", copy: "3月発売の新製品『モロッカンオイルトリートメントミスト』", logoText: "MOROCCANOIL", campaign: "新規導入企画として、本催事で新規導入いただいたサロンスタッフ様へオイルトリートメント50mlをプレゼント" },
+      { name: "ガモウ販売促進部", area: "A", copy: "", logoText: "GAMO\nPROMOTION", campaign: "OP・OSの夏期プロモーション" },
+
+      // ===== AREA B =====
+      { name: "日本ロレアル株式会社", area: "B", copy: "イノア新色&アルカリキャンセルオキシ", logoText: "L'ORÉAL", campaign: "" },
+      { name: "株式会社アマトラ", area: "B", copy: "高付加価値ヘアケア Amatora", logoText: "Amatora", campaign: "" },
+      { name: "株式セフティ", area: "B", copy: "いち早く新商品の展示をします！", logoText: "SAFETY", campaign: "" },
+      { name: "リアル化学株式会社", area: "B", copy: "ヘアカラーに＋30分で出来るクイック髪質改善", logoText: "REAL\nCHEMICAL", campaign: "ルミナススプレー 5+1 プロモーションをご案内" },
+      { name: "(株)ミルボン", area: "B", copy: "カラーの常識を覆す\"美髪彩生\"カラー PRETOWA", logoText: "MILBON", campaign: "ケシキ、サロンレディブランド添付企画" },
+      { name: "ヘンケルジャパン（株）", area: "B", copy: "『One HENKEL』資生堂プロフェッショナル×シュワルツコフ", logoText: "HENKEL", campaign: "ファイバープレックス、テラ、プリミエンスシリーズにて検討中です" },
+      { name: "ニューウェイジャパン株式会社", area: "B", copy: "", logoText: "NEWAY\nJAPAN", campaign: "トリキュア業務メニュー ソンク・セトル・スタイリング剤特別企画を予定" },
+      { name: "株式会社アリミノ", area: "B", copy: "Pro confidence", logoText: "ARIMINO", campaign: "ミントのまとめ買い企画、コアミーのスタート活性化企画などサッシェを絡めた企画をご用意する予定です" },
+
+      // ===== AREA C =====
+      { name: "ホーユー株式会社", area: "C", copy: "価値提供", logoText: "hoyu", campaign: "" },
+      { name: "株式会社 武田", area: "C", copy: "その場で体験いただける商材を多数！", logoText: "TAKEDA", campaign: "体感頂いた方に通常有償のサンプルをご提供させていただきます" },
+      { name: "株式会社千代田化学", area: "C", copy: "新製品システムトリートメント「SOLOELLE」", logoText: "CHIYODA\nKAGAKU", campaign: "ヒタ シャントリ60ml 5＋1" },
+      { name: "ウエラ", area: "C", copy: "過酷な夏の紫外線、乾燥によるダメージに備えて", logoText: "Wella", campaign: "社内で前向きに検討させていただきます（※実施ができない可能性あり）" },
+      { name: "underbar plus（UnG）", area: "C", copy: "感性と理論。デザイナーの答え。", logoText: "underbar", campaign: "ヘアケアの限定セットもしくは限定価格を予定しています" },
+      { name: "株式会社GOALD JAPAN", area: "C", copy: "累計出荷数50万本突破 支持率No.1のメンズブランド", logoText: "GOALD\nJAPAN", campaign: "" },
+      { name: "ルベル／タカラベルモント株式会社", area: "C", copy: "髪質改善アウトバス セラムミルク発売！！", logoText: "LebeL", campaign: "リプレックス アンダーリペア・デュオリペア100mlサイズ 5プラス1" },
+
+      // ===== AREA D =====
+      { name: "株式会社ユーグレナ", area: "D", copy: "老化細胞を除去する引き算のコスメ NEcCO", logoText: "euglena", campaign: "NEcCOスーペリア、Evi、エポプレミアムヘマチンにて検討中（未定ではありますが注力商品にて）" },
+      { name: "セフィーヌ", area: "D", copy: "自然派コスメ。スキンケアからベースメイクまで", logoText: "CEFINE", campaign: "" },
+      { name: "TooB", area: "D", copy: "新商品の化粧水をリリース", logoText: "TooB", campaign: "スタ販価格での提案。ナチュラルスキンセラム、リバイタライジングエースブースト、リファイニングトナー" },
+      { name: "SHIGETA PARIS", area: "D", copy: "生まれ変わったヘアケアシリーズをご体感いただけます", logoText: "SHIGETA", campaign: "カウンセリングイベント" },
+      { name: "MYHONEY", area: "D", copy: "生はちみつの試食・はちみつ美容", logoText: "MY\nHONEY", campaign: "後日、商談確約でアマゾンギフト券プレゼント" },
+      { name: "コーセープロフェッショナル", area: "D", copy: "話題のワンバイコーセーをお試しいただけます！", logoText: "KOSÉ", campaign: "内容は未定ですが企画を組むことは出来ます（詳細決まりましたらご連絡いたします）" },
+      { name: "PROLASH", area: "D", copy: "最新LEDライト「イルミーク」をお試し頂けます。", logoText: "PROLASH", campaign: "" },
+      { name: "株式会社BJC", area: "D", copy: "人気のV3製品と2026最新コスメ", logoText: "BJC", campaign: "" },
+      { name: "株式会社イムダイン", area: "D", copy: "真の美しさは、心身の健康から", logoText: "IMMUDYNE", campaign: "特別スタッフセール実施等" },
+
+      // ===== AREA E =====
+      { name: "株式会社b-ex", area: "E", copy: "大人気オルキデから第二弾が登場！", logoText: "b-ex", campaign: "オルキデ/キラテラ 初回導入並びにサービス添付の企画を検討中です。サンプル配布も予定しております" },
+      { name: "サンコール", area: "E", copy: "最先端の成分をフル活用", logoText: "SUNCALL", campaign: "既存のスワエ４＋１企画　当日確定でマイフォースヒートメモリーケア店販サイズ×1サービス" },
+      { name: "中野製薬株式会社", area: "E", copy: "ヘアケアで、利益をデザインする。", logoText: "NAKANO", campaign: "ナノアミノプレミアムクオリアシリーズ" },
+      { name: "テクノエイト株式会社", area: "E", copy: "新たな高付加価値づくり", logoText: "TECHNO\nEIGHT", campaign: "" },
+
+      // ===== AREA F =====
+      { name: "株式会社 グランクラージュ", area: "F", copy: "時短して単価アップ", logoText: "GRAN\nCOURAGE", campaign: "" },
+      { name: "デミコスメティクス", area: "F", copy: "ブリーチレス韓国カラーや髪質改善フローディア", logoText: "DEMI", campaign: "" },
+      { name: "イーラル株式会社", area: "F", copy: "独自の『ヘッドキュア』技術", logoText: "eral", campaign: "" },
+      { name: "株式会社 ナプラ", area: "F", copy: "Our Summer Beauty Recommendations", logoText: "napla", campaign: "リフレッシュシャンプー＆トリートメント通常企画5プラス1。その日ご注文いただいたサロン様限定25プラス10の企画。サービス5本追加致します。" },
+      { name: "株式会社ビーファースト", area: "F", copy: "店販の文化作りを可能にした「MLPB」", logoText: "B FIRST", campaign: "" },
+      { name: "マデナ", area: "F", copy: "次世代エイジングケアのご提案", logoText: "MADENA", campaign: "" },
+      { name: "sinsコスメティクス", area: "F", copy: "日本一簡単な縮毛矯正 sins髪質改善", logoText: "sins", campaign: "" },
+      { name: "株式会社ハホニコ", area: "F", copy: "梅雨の湿気対策", logoText: "HAHONICO", campaign: "内容は未定。詳細決まりましたらご連絡いたします。" },
+
+      // ===== AREA G =====
+      { name: "香栄化学株式会社", area: "G", copy: "髪質改善・梅雨対策にこだわりの商材", logoText: "KOEI", campaign: "全商品3＋1" },
+      { name: "株式会社ワイマック", area: "G", copy: "簡単に髪質改善ができます！", logoText: "JEWEL", campaign: "検討中" },
+      { name: "自由が丘クリニック", area: "G", copy: "診察室で生まれたドクターズコスメ。", logoText: "JCDC", campaign: "イベント限定スタッフセール（全品半額）" },
+      { name: "（株）F'sビューティー", area: "G", copy: "花粉&紫外線対策 敏感肌の方にご提案", logoText: "F's\nBEAUTY", campaign: "全商品5+1" },
+      { name: "野口総合研究所", area: "G", copy: "皮膚トラブルのお悩み解決アイテム", logoText: "NOGUCHI", campaign: "クオカード" },
+      { name: "日本グランデックス", area: "G", copy: "頭皮にも、髪にも、もっと優しいカラー。", logoText: "GRANDEX", campaign: "" },
+      { name: "パシフィックプロダクツ", area: "G", copy: "ボタニカルミントで清涼感と保湿", logoText: "PACIFIC", campaign: "" },
+      { name: "カエタステクノロジー", area: "G", copy: "高価値ケア製品を準備しています！", logoText: "CAETUS", campaign: "フリーチョイス6本＋限定ショッパー付" },
+
+      // ===== AREA H =====
+      { name: "バルクオム", area: "H", copy: "メンズへの提案はメンズブランド", logoText: "BULK", campaign: "ブースに来場いただいたサロン様へファブリックフレグランスのミニボトルをプレゼント（シャンプークロスの匂い消しにもお使いいただけます）" },
+      { name: "株式会社アデランス", area: "H", copy: "ザ・ドライヤーの夏キャンペーン", logoText: "ADERANS", campaign: "ザ•ドライヤーを購入していただいたらVエッセンスをプレゼント" },
+      { name: "日理株式会社", area: "H", copy: "P-UP製品 特殊加工による活性化", logoText: "NICHIRI", campaign: "" },
+      { name: "株式会社サクシード", area: "H", copy: "全商品20%OFF 分割手数料無金利", logoText: "SUCCEED", campaign: "当日限定5+1企画（同価格商品フリーチョイス）" },
+      { name: "山野美容商事株式会社", area: "H", copy: "DENBAヘルスにて快適空間実現", logoText: "YAMANO", campaign: "" },
+      { name: "フェザー株式会社レオンカ", area: "H", copy: "", logoText: "FEATHER", campaign: "" },
+      { name: "株式会社 内海", area: "H", copy: "数十種類のシザーが試し切り出来ます。", logoText: "UTSUMI", campaign: "" },
+      { name: "水谷理美容鋏製作所", area: "H", copy: "", logoText: "MIZUTANI", campaign: "" },
+
+      // ===== AREA I =====
+      { name: "株式会社KINUJO", area: "I", copy: "新登場サファイアストレート体験会", logoText: "KINUJO", campaign: "" },
+      { name: "株式会社Kirala", area: "I", copy: "革新的な美容デバイスをお試し頂けます", logoText: "Kirala", campaign: "5+1" },
+      { name: "YA-MAN", area: "I", copy: "あなたの美を叶える。", logoText: "YA-MAN", campaign: "オーラルリフト、リフトロジープロ 10%off" },
+      { name: "株式会社MUK", area: "I", copy: "Instagramで話題のドライヤー・美顔器", logoText: "MUK", campaign: "美顔器類（2+1企画、定価より44%OFF）" },
+      { name: "株式会社ツインバード", area: "I", copy: "ぴったりの風をお届けします", logoText: "TWINBIRD", campaign: "" },
+      { name: "アンドナイン株式会社", area: "I", copy: "", logoText: "&NINE", campaign: "ミントベル" },
+      { name: "JadeJapan（LOA）", area: "I", copy: "LOAのプレミアムラインを先行展示", logoText: "Jade", campaign: "別途ご連絡" },
+      { name: "pad（1DK）", area: "I", copy: "スタイリング剤と機能的ヘアケア 1DK", logoText: "1DK", campaign: "当日限定5+1企画（同価格商品フリーチョイス）" },
+      { name: "株式会社awaas", area: "I", copy: "全身にも使えるユニークな新ブランド", logoText: "awaas", campaign: "" },
+      { name: "株式会社LOWBAL", area: "I", copy: "サロンワークをもっと高品質に。", logoText: "LOWBAL", campaign: "ヘアオイルのミニサンプル・エマルジョンのサシェのプレゼント" },
+      { name: "（株）大西", area: "I", copy: "ワコウクロス 実際に触って頂けます", logoText: "ONISHI", campaign: "ワコウ 商品添付（5+1）　CATA-100、アキュアンオールインワンジェル、アキュアンスカルプローション、エッセンス、ジアノン200ml" },
+    ];
+
+    // ============================================================
+    // AREA badge gradient map
+    // ============================================================
+    const areaBadgeGrad = {
+      A: 'linear-gradient(90deg,#f5a623,#d4840a)',
+      B: 'linear-gradient(90deg,#ff4d8d,#e8339a)',
+      C: 'linear-gradient(90deg,#3b82f6,#2563eb)',
+      D: 'linear-gradient(90deg,#8b5cf6,#7c3aed)',
+      E: 'linear-gradient(90deg,#10b981,#059669)',
+      F: 'linear-gradient(90deg,#14b8a6,#0d9488)',
+      G: 'linear-gradient(90deg,#22c55e,#16a34a)',
+      H: 'linear-gradient(90deg,#a855f7,#9333ea)',
+      I: 'linear-gradient(90deg,#f59e0b,#d97706)',
+    };
+
+    let currentArea = 'all';
+
+    // ============================================================
+    // RENDER CARDS
+    // ============================================================
+    function renderCards() {
+      const grid = document.getElementById('cardGrid');
+      const noResults = document.getElementById('noResults');
+      grid.innerHTML = '';
+      grid.appendChild(noResults);
+
+      makers.forEach((m, idx) => {
+        const card = document.createElement('div');
+        card.className = 'maker-card';
+        card.dataset.area = m.area;
+        card.dataset.name = m.name;
+        card.dataset.idx = idx;
+        card.onclick = () => openModal(idx);
+
+        const hasCampaign = m.campaign && m.campaign.trim() !== '';
+        const campaignBadge = hasCampaign
+          ? `<div class="card-campaign-badge">🎁 特別企画あり</div>`
+          : `<div class="no-campaign">企画内容は未定 / 情報なし</div>`;
+
+        const copyHtml = m.copy ? `<div class="card-copy">${escapeHtml(m.copy)}</div>` : '';
+
+        card.innerHTML = `
+          <div class="card-logo-area">
+            <div class="card-logo-placeholder">${escapeHtml(m.logoText)}</div>
+          </div>
+          <div class="card-body">
+            <div class="card-area-badge">Area ${m.area}</div>
+            <div class="card-name">${escapeHtml(m.name)}</div>
+            ${copyHtml}
+            ${campaignBadge}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      applyFilters();
+      observeCards();
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML.replace(/\n/g, '<br>');
+    }
+
+    // ============================================================
+    // MODAL
+    // ============================================================
+    function openModal(idx) {
+      const m = makers[idx];
+      const overlay = document.getElementById('modalOverlay');
+      const badge = document.getElementById('modalBadge');
+      const name = document.getElementById('modalName');
+      const campaign = document.getElementById('modalCampaign');
+      const copySection = document.getElementById('modalCopySection');
+      const copyEl = document.getElementById('modalCopy');
+
+      badge.textContent = `Area ${m.area}`;
+      badge.style.background = areaBadgeGrad[m.area];
+      name.textContent = m.name;
+
+      if (m.campaign && m.campaign.trim()) {
+        campaign.innerHTML = `<div class="modal-campaign-text">${escapeHtml(m.campaign)}</div>`;
+      } else {
+        campaign.innerHTML = `<div class="modal-no-campaign">📋 特別企画内容は現在未定です。<br>詳細が確定次第ご案内いたします。</div>`;
+      }
+
+      if (m.copy && m.copy.trim()) {
+        copySection.style.display = 'block';
+        copyEl.textContent = m.copy;
+      } else {
+        copySection.style.display = 'none';
+      }
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ============================================================
+    // FILTERS
+    // ============================================================
+    function setArea(area, btn) {
+      currentArea = area;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyFilters();
+      syncMapHighlight(area);
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.maker-card');
+      let count = 0;
+      cards.forEach(card => {
+        const matchArea = currentArea === 'all' || card.dataset.area === currentArea;
+        const matchSearch = !query || card.dataset.name.toLowerCase().includes(query);
+        if (matchArea && matchSearch) { card.style.display = 'flex'; count++; }
+        else { card.style.display = 'none'; }
+      });
+      document.getElementById('visibleCount').textContent = count;
+      document.getElementById('noResults').style.display = count === 0 ? 'block' : 'none';
+    }
+
+    function observeCards() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.maker-card').forEach(card => observer.observe(card));
+    }
+
+    function syncMapHighlight(area) {
+      document.querySelectorAll('.map-area-group').forEach(g => {
+        g.classList.remove('map-selected');
+        const rect = g.querySelector('.area-bg');
+        if (rect) { rect.style.strokeWidth = '1.5'; rect.style.filter = ''; }
+      });
+      if (area !== 'all') {
+        const group = document.querySelector(`.map-area-group[data-area="${area}"]`);
+        if (group) {
+          group.classList.add('map-selected');
+          const rect = group.querySelector('.area-bg');
+          if (rect) { rect.style.strokeWidth = '3'; rect.style.filter = 'brightness(1.1)'; }
+        }
+      }
+    }
+
+    function selectMapArea(area) {
+      let targetBtn = null;
+      document.querySelectorAll('.filter-btn').forEach(b => { if (b.innerText.includes(`Area ${area}`)) targetBtn = b; });
+      setArea(area, targetBtn);
+      document.getElementById('exhibitors').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetMapFilter() {
+      setArea('all', document.querySelector('.filter-btn'));
+    }
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.boxShadow =
+        window.scrollY > 80 ? '0 4px 24px rgba(139,92,246,0.15)' : '0 2px 20px rgba(139,92,246,0.08)';
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
